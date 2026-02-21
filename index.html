@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Jarvis AI</title>
+
+  <!-- ResponsiveVoice TTS -->
+  <script src="https://code.responsivevoice.org/responsivevoice.js?key=DHDZACSR"></script>
+
+  <!-- Firebase -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-app.js";
+    import { getDatabase, ref, set, get, child } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-database.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBJv5ip6MplrwL259OfeQMw-yqD-PG8YZM",
+      authDomain: "jarvisai-3216a.firebaseapp.com",
+      projectId: "jarvisai-3216a",
+      storageBucket: "jarvisai-3216a.firebasestorage.app",
+      messagingSenderId: "892896831961",
+      appId: "1:892896831961:web:31e4ecfd349071c5bb11c8",
+      measurementId: "G-8JE6G3HVJ7"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+    window.firebaseDB = db; // accessible in script.js
+  </script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+
+<h1>🤖 Jarvis AI</h1>
+
+<div id="chat"></div>
+
+<input type="text" id="textInput" placeholder="Type here...">
+<button onclick="sendText()">Send</button>
+<button onclick="startListening()">🎤 Speak</button>
+<button onclick="stopListening()">🛑 Stop Mic</button>
+<button onclick="stopSpeaking()">🔇 Stop Voice</button>
+
+<!-- Links -->
+<div class="links">
+  <a href="https://www.instagram.com/lakshya_username" target="_blank">Instagram</a> |
+  <a href="https://youtube.com/@lux_channel" target="_blank">YouTube</a>
+</div>
+
+<p class="footer">Made by Lakshya</p>
+
+</div>
+
+<script type="module" src="script.js"></script>
+</body>
+</html>
